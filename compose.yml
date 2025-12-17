@@ -3,7 +3,11 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "11"
+    VERSION: "10"
+    RAM_SIZE: "7G"
+  CPU_CORES: "10"
+   USERNAME: "Renato"
+   PASSWORD: "123"
     devices:
       - /dev/kvm
       - /dev/net/tun
@@ -14,6 +18,6 @@ services:
       - 3389:3389/tcp
       - 3389:3389/udp
     volumes:
-      - ./windows:/storage
+      -.data/windows:/storage
     restart: always
     stop_grace_period: 2m
